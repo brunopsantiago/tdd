@@ -1,24 +1,28 @@
-public class Pilha {
+ public class Pilha {
 
-    private String elemento;
-    private int quant;
+    private Object[] elementos = new Object[10];
+    private int quant = 0;
 
     public boolean estaVazia() {
-
-        return (elemento == null);
+        return quant == 0;
     }
 
     public int tamanho() {
-
         return quant;
     }
 
     public void empilha(String elemento) {
-        this.elemento = elemento;
+        this.elementos[quant] = elemento;
         quant ++;
     }
 
     public Object topo() {
-        return elemento;
+        return elementos[quant -1];
+    }
+
+    public Object desempilha() {
+        Object topo = topo();
+        quant --;
+        return topo;
     }
 }
