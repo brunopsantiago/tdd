@@ -22,4 +22,25 @@ public class TestPilha {
         assertEquals("primeiro", p.topo());
         System.out.println("empilhaUmElemento "+p.tamanho());
     }
+
+    @Test
+    public void empilhaDoisElementos() {
+        Pilha p = new Pilha();
+        p.empilha("primeiro");
+        p.empilha("segundo");
+        assertEquals(2, p.tamanho());
+        assertEquals("segundo", p.topo());
+        System.out.println("empilhaDoisElemento "+p.tamanho());
+    }
+
+    @Test
+    public void empilhaDoisDesempilhaUmElemento() {
+        Pilha p = new Pilha();
+        p.empilha("primeiro");
+        p.empilha("segundo");
+        Object desempilha = p.desempilha();
+        assertEquals(1, p.tamanho());
+        assertEquals("primeiro", p.topo());
+        System.out.println("empilhaDoisElemento "+p.tamanho());
+    }
 }
